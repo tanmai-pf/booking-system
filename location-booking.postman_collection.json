@@ -1,0 +1,863 @@
+{
+  "info": {
+    "_postman_id": "6a875940-2c83-4ac8-8321-d62ed999a9f1",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38313093"
+  },
+  "item": [
+    {
+      "name": "Create Building A",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Building A\",\n    \"code\": \"A\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create A-01",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Floor 1\",\n    \"code\": \"A-01\",\n    \"parentId\": \"b4f6720e-a002-4b4f-9f36-9692e187cf54\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get A-01",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/locations/{{A01-ID}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "{{A01-ID}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete A-01",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/locations/{{A01-ID}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "{{A01-ID}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Meeting Room 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Meeting Room 2\",\n    \"code\": \"A-01-02\",\n    \"bookable\": true,\n    \"parentId\": \"{{A01-ID}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Meeting Room 2",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiJ9."
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Conference Room 2\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/{{locationId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "{{locationId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Department",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiJ9."
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"capacity\": 30,\n    \"openDays\": \"Mon-Sat\",\n    \"openStart\": \"10:00\",\n    \"openEnd\": \"14:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/departments/e51e65c8-7a81-4d82-a1c6-60c9b2c37c05",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "departments",
+            "e51e65c8-7a81-4d82-a1c6-60c9b2c37c05"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Building Tree",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/locations/tree",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "tree"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error - Admin access required",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyMSIsIm5hbWUiOiJBbGljZSBOZ3V5ZW4iLCJkZXBhcnRtZW50IjoiRUZNIn0."
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Test\", \"code\": \"X\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Assign FSS Department to Room 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"department\": \"FSS\",\n    \"capacity\": 50,\n    \"openDays\": \"Mon-Fri\",\n    \"openStart\": \"09:00\",\n    \"openEnd\": \"18:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/b64a23a1-5726-43a6-b9ac-4b979e7dd378/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "b64a23a1-5726-43a6-b9ac-4b979e7dd378",
+            "departments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Assign AVS Department to Room 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"department\": \"AVS\", \"capacity\": 5, \"openDays\": \"Mon-Sat\", \"openStart\": \"09:00\", \"openEnd\": \"18:00\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/0bb40b26-1b9f-4df2-86d6-d5dfb247b093/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "0bb40b26-1b9f-4df2-86d6-d5dfb247b093",
+            "departments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error - Duplicate Department",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"department\": \"FSS\",\n    \"capacity\": 10,\n    \"openDays\": \"Mon-Fri\",\n    \"openStart\": \"09:00\",\n    \"openEnd\": \"18:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/0bb40b26-1b9f-4df2-86d6-d5dfb247b093/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "0bb40b26-1b9f-4df2-86d6-d5dfb247b093",
+            "departments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error - Assign To Non-Bookable Location",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{adminToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"department\": \"FSS\",\n    \"capacity\": 10,\n    \"openDays\": \"Mon-Fri\",\n    \"openStart\": \"09:00\",\n    \"openEnd\": \"18:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/locations/e3d71f87-ab56-40a1-a306-339e702f6143/departments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "locations",
+            "e3d71f87-ab56-40a1-a306-339e702f6143",
+            "departments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User2 - View bookings",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user2Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User2 - Add booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user2Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 10,\n    \"startTime\": \"2026-03-02T10:00:00Z\",\n    \"endTime\": \"2026-03-02T11:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User2 - Add non-overlapped booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user2Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 30,\n    \"startTime\": \"2026-03-02T12:00:00Z\",\n    \"endTime\": \"2026-03-02T13:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - View bookings",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Add booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 10,\n    \"startTime\": \"2026-03-02T09:30:00Z\",\n    \"endTime\": \"2026-03-02T10:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Add overlapped booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 10,\n    \"startTime\": \"2026-03-02T14:30:00Z\",\n    \"endTime\": \"2026-03-02T16:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Error - Add exceeded slots",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 55,\n    \"startTime\": \"2026-03-02T14:30:00Z\",\n    \"endTime\": \"2026-03-02T16:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Error - Weekend booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 5,\n    \"startTime\": \"2026-03-07T10:00:00Z\",\n    \"endTime\": \"2026-03-07T11:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Error - Outside hours booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 5,\n    \"startTime\": \"2026-03-02T08:00:00Z\",\n    \"endTime\": \"2026-03-02T10:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Error - Past booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"{{locationId}}\",\n    \"department\": \"FSS\",\n    \"attendees\": 5,\n    \"startTime\": \"2025-01-01T10:00:00Z\",\n    \"endTime\": \"2025-01-01T11:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User1 - Error - Non-bookable location",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user1Token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locationId\": \"b4f6720e-a002-4b4f-9f36-9692e187cf54\",\n    \"department\": \"FSS\",\n    \"attendees\": 5,\n    \"startTime\": \"2026-03-02T10:00:00Z\",\n    \"endTime\": \"2026-03-02T11:00:00Z\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
