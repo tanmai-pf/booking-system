@@ -44,8 +44,6 @@ All endpoints require a Bearer token. JWT is decoded (not verified) to get user 
 | Bob | user | `eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyMiIsIm5hbWUiOiJCb2IgVHJhbiJ9.` |
 | Charlie | user | `eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyMyIsIm5hbWUiOiJDaGFybGllIExlIn0.` |
 
-See [SAMPLE_API_FLOW.md](SAMPLE_API_FLOW.md) for full curl examples.
-
 ## System Design
 
 ```
